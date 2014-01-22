@@ -14,7 +14,7 @@ module EKanban
         def closed_id
           #IssueStatus.all.each {|x| return x.id if x.is_closed}
           status = IssueStatus.where("is_closed = ?", true)
-          return status.first.id if !status.nil?
+          return status.first.id if !status.empty?
         end
       end
 
